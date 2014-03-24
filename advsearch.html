@@ -1,0 +1,45 @@
+<!--emergency response equipment
+floridadisaster.org
+https://www.llis.dhs.gov/
+The Florida Division of Emergency Management-->
+<!DOCTYPE html>
+<html style="background-color:#003366">
+	<head>
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<title>DHS Grant Equipment</title>
+	</head>
+	<body>
+		<img align="left" width="150" src="dhs.png"></img>
+		<img align="right" width="150" src="dhs.png"></img>
+		<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
+		<div id="advsearchbox"><h2>Search</h2>
+			<form action="search.php" method="get">
+				<input type="search" name="search">
+				<input type="submit" name="search" value="Search"><br>
+			<table style="text-align:right; border-spacing:5px; width:400px">
+			<tr>
+				<td><label>Name:</label>
+			    	<input type="checkbox" name="name"></td>
+				<td><label>AEL-Code:</label>
+			    	<input type="checkbox" name="aelcode"></td>
+			</tr><tr>
+				<td><label>Category:</label>
+				<input type="checkbox" name="category"></td>
+				<td><label>Subcategory:</label>
+				<input type="checkbox" name="subcategory"></td>
+			</tr><tr>
+				<td><label>Agency:</label>
+				<input type="checkbox" name="agency"></td>
+				<td><label>Section:</label>
+				<input type="checkbox" name="section"></td>
+			</tr><tr>
+				<td><label>Deployable:</label>
+				<input type="checkbox" name="deployable"></td>
+				<td><label>Status:</label>
+				<input type="checkbox" name="status"></td>
+			</tr>
+			<table>
+			</form>
+		</div>
+	</body>
+</html>
