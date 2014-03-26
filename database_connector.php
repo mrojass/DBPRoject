@@ -1,6 +1,6 @@
 <?php
 	$host="localhost";
-	$user="root";
+	$user="test";
 	$password="cop4710";
 	$dbName="FloridaDHSEquipment";
 	
