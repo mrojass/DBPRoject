@@ -38,8 +38,8 @@ if(isset($_POST['submit']))
 		<title>DHS Grant Equipment</title>
 	</head>
 	<body>
-		<img align="left" width="150" src="dhs.png"></img>
-		<img align="right" width="150" src="dhs.png"></img>
+		<img align="left" width="150" src="SERTlogo.jpg"></img>
+		<img align="right" width="150" src="SERTlogo.jpg"></img>
 		<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
 		<div id="loginbox"> <h2>Login here</h2>
 		<form action="login.php" method="get">
