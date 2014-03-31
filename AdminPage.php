@@ -28,7 +28,7 @@
 		<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
 		<div id="loginbox"> <h2>Tasks</h2>
 		<p><a href="Deploy.php"><b>Deploy<b></a></p>
-		<p><a href="Search.php"><b>Search<b></a></p>
+		<p><a href="search.php"><b>Search<b></a></p>
 		<p><a href="DBChange.php"<b>Make Changes<b></a></p>
 		</div>
 	</body>

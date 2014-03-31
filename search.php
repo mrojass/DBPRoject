@@ -8,7 +8,16 @@
 	}
 	if(isset($_POST['logout']))
 		header("location:logout.php");
+
 	include 'database_connector.php';
+	if(isset($_POST['return']))
+	{
+		$username=$_SESSION['username'];         
+		$admin =mysqli_query($con, "select * from Employees where username='$username' and admin='1'");
+                        if($admin->num_rows==1)
+                                header("location:AdminPage.php");
+                        else    header("location:search.php");
+	}	
 	
 	/*if(isset($_POST['name']))
 	{
@@ -39,7 +48,10 @@
 		<form action="search.php" method="get">
 		<input type="text" name="search" value="Search Here">
 		<input type="submit" name="search" value="Search"><br>
-		<a href="advsearch.php">Advanced Search</a>
+		<a href="advsearch.php">Advanced Search</a><br><br>
+		</form>
+		<form method="post">
+		<input type="submit" name="return" value="Return To Adim Page">
 		</form>
 		</div>
 	</body>

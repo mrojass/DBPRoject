@@ -34,7 +34,7 @@
 		<p>Approve Deploy:</p>
 		<!-- List approvable deploys here, if any-->
 		</form>
-		<p><a href="search.php">Go To Search Page</a></p>
+		<p><a href="AdminPage.php">Go To Admin Page</a></p>
 		</div>
 	</body>
 </html>
