@@ -23,8 +23,10 @@
 			$_SESSION['password']=$password;
 		
 			$admin =mysqli_query($con, "select * from Employees where username='$username' and admin='1'");
-			if($admin->num_rows==1)
+			if($admin->num_rows==1){
+				$_SESSION['admin']="true";
 				header("location:AdminPage.php");
+			}
 			else	header("location:search.php");
 		}
 		else

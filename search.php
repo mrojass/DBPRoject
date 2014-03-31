@@ -35,12 +35,12 @@
 	}*/
 ?>
 <!DOCTYPE html>
-<html style="background-color:#003366">
+<html>
 	<head>
 		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 		<title>DHS Grant Equipment</title>
 	</head>
-	<body>
+	<body background="background2.jpg">
 		<img align="left" width="150" src="SERTlogo.png"></img>
 		<img align="right" width="150" src="SERTlogo.png"></img>
 		<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
@@ -52,6 +52,7 @@
 		</form>
 		<form method="post">
 		<input type="submit" name="return" value="Return To Adim Page">
+		<input type="submit" name="logout" value="Logout">
 		</form>
 		</div>
 	</body>
