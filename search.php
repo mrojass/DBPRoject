@@ -10,7 +10,7 @@
 		header("location:logout.php");
 	include 'database_connector.php';
 	
-	if(isset($_POST['name']))
+	/*if(isset($_POST['name']))
 	{
 		$name=$_POST['name'];
 		$email=$_POST['email'];
@@ -23,7 +23,7 @@
 		echo 'Values updated successfully';
 		}
 
-	}
+	}*/
 ?>
 <!DOCTYPE html>
 <html style="background-color:#003366">
@@ -32,14 +32,14 @@
 		<title>DHS Grant Equipment</title>
 	</head>
 	<body>
-		<img align="left" width="150" src="SERTlogo.jpg"></img>
-		<img align="right" width="150" src="SERTlogo.jpg"></img>
+		<img align="left" width="150" src="SERTlogo.png"></img>
+		<img align="right" width="150" src="SERTlogo.png"></img>
 		<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
 		<div id="searchbox"><h2>Search</h2>
 		<form action="search.php" method="get">
 		<input type="text" name="search" value="Search Here">
 		<input type="submit" name="search" value="Search"><br>
-		<a href="advsearch.html">Advanced Search</a>
+		<a href="advsearch.php">Advanced Search</a>
 		</form>
 		</div>
 	</body>
