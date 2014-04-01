@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 28, 2014 at 10:18 PM
+-- Generation Time: Apr 01, 2014 at 06:02 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -68,19 +68,19 @@ INSERT INTO `Agencies` (`Name`, `Street`, `City`, `Zip`, `Phone`, `Director`, `R
 ('Office of the Attorney General ', 'The Capitol, PL01 ', 'Tallahassee', 32399, 2147483647, 'James D. Varnado', 3, 23),
 ('Pensacola State Community College ', '1000 College Blvd. ', 'Pensacola', 32504, 2147483647, 'Hank Shirah', 1, 24),
 ('Santa Fe College Police Department ', 'Gainesville, Florida  32606 ', 'Gainesville', 32606, 2147483647, 'Ed Book', 4, 25),
-('State Attorney''s Office 10th Judicial Circuit ', '255 North Broadway Avenue ', 'Bartow', 32767, 2147483647, 'Honorable Jerry Hill', 8, 26),
+('  State Attorney''s Office 10th Judicial Circuit ', '255 North Broadway Avenue ', 'Bartow', 32767, 2147483647, 'Honorable Jerry Hill', 8, 26),
 ('State Attorney''s Office 11th Judicial Circuit ', 'E.R. Graham Building 1350 N.W. 12th Avenue ', 'Miami', 32767, 2147483647, 'Honorable Katherine Fernandez Rundle', 14, 27),
 ('State Attorney''s Office 12th Judicial Circuit ', '2071 Ringling Blvd. Suite 400 ', 'Sarasota', 32767, 2147483647, 'Honorable Ed Brodsky', 10, 28),
 ('State Attorney''s Office 13th Judicial Circuit ', '419 North Pierce Street ', 'Tampa', 32767, 2147483647, 'Honorable Mark A. Ober', 9, 29),
 ('State Attorney''s Office 14th Judicial Circuit ', 'Post Office Box 1040 ', 'Panama City', 32402, 2147483647, 'Honorable Glenn Hess', 2, 30),
 ('State Attorney''s Office 15th Judicial Circuit ', '401 North Dixie Highway ', 'West Palm Beach', 32767, 2147483647, 'Honorable Dave Aronberg', 12, 31),
-('State Attorney''s Office 16th Judicial Circuit ', '530 Whitehead Street, Suite 201 ', 'Key West', 32767, 2147483647, 'Honorable Catherine Vogel', 14, 32),
+('  State Attorney''s Office 16th Judicial Circuit ', '530 Whitehead Street, Suite 201 ', 'Key West', 32767, 2147483647, 'Honorable Catherine Vogel', 14, 32),
 ('State Attorney''s Office 17th Judicial Circuit ', '201 SE 6th Street ', 'Fort Lauderdale', 32767, 2147483647, 'Honorable Michael J. Satz', 13, 33),
 ('State Attorney''s Office 18th Judicial Circuit ', '2725 Judge Fran Jamieson Way, Bldg D ', 'Viera', 32767, 2147483647, 'Honorable Blaise Trettis', 7, 34),
 ('State Attorney''s Office 19th Judicial Circuit ', '411 South 2nd Street ', 'Fort Pierce', 32767, 2147483647, 'Honorable Bruce Colton', 11, 35),
 ('State Attorney''s Office 1st Judical Circuit ', '190 Govenmental Center ', 'Pensacola', 32501, 2147483647, 'Honorable William "Bill" Eddins', 1, 36),
 ('State Attorney''s Office 20th Judicial Circuit ', 'Post Office Box 399 ', 'Fort Myers', 32767, 2147483647, 'Honorable Stephen B. Russell', 6, 37),
-('State Attorney''s Office 2nd Judicial Circuit ', '301 South Monroe Street Suite 475 ', 'Tallahassee', 32399, 2147483647, 'Honorable Willie Meggs', 3, 38),
+('  State Attorney''s Office 2nd Judicial Circuit ', '301 South Monroe Street Suite 475 ', 'Tallahassee', 32399, 2147483647, 'Honorable Willie Meggs', 3, 38),
 ('State Attorney''s Office 3rd Judicial Circuit ', '100 SE Court Street ', 'Live Oak', 32064, 2147483647, 'Honorable Jeff Siegmeister', 4, 39),
 ('State Attorney''s Office 4th Judicial Circuit ', '220 East Bay Street, 6th Floor ', 'Jacksonville', 32202, 2147483647, 'Honorable Angela B. Corey', 5, 40),
 ('State Attorney''s Office 5th Judicial Circuit ', '110 NW 1st Avenue, Suite 5000 ', 'Ocala', 32767, 2147483647, 'Honorable Brad King', 6, 41),
@@ -208,12 +208,35 @@ INSERT INTO `Agencies` (`Name`, `Street`, `City`, `Zip`, `Phone`, `Director`, `R
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `Deployed`
+--
+
+CREATE TABLE IF NOT EXISTS `Deployed` (
+  `Equipid` int(11) DEFAULT NULL,
+  `Did` int(11) NOT NULL AUTO_INCREMENT,
+  `ToAid` int(11) DEFAULT NULL,
+  `FromAid` int(11) DEFAULT NULL,
+  `Approved` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`Did`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `Deployed`
+--
+
+INSERT INTO `Deployed` (`Equipid`, `Did`, `ToAid`, `FromAid`, `Approved`) VALUES
+(15, 2, 1, 5, 0),
+(68, 3, 2, 5, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `Employees`
 --
 
 CREATE TABLE IF NOT EXISTS `Employees` (
-  `Name` varchar(64) NOT NULL,
-  `Username` varchar(32) NOT NULL,
+  `Name` varchar(32) NOT NULL,
+  `Username` varchar(16) NOT NULL,
   `Password` varchar(32) NOT NULL,
   `Admin` tinyint(1) NOT NULL,
   PRIMARY KEY (`Username`)
@@ -224,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `Employees` (
 --
 
 INSERT INTO `Employees` (`Name`, `Username`, `Password`, `Admin`) VALUES
-('admin', 'admin', 'admin123', 1),
+('admin', 'admin', 'admin123', 0),
 ('Bill Gates', 'bmicro', 'melinda', 0),
 ('Michael Townley', 'desanta', 'gta5', 0),
 ('Childish Gambino', 'donglover', 'thedeepweb', 0),
@@ -235,9 +258,9 @@ INSERT INTO `Employees` (`Name`, `Username`, `Password`, `Admin`) VALUES
 ('Walter White', 'heisenberg', 'bluesky', 0),
 ('Iggy Azalea', 'iggy', 'work', 0),
 ('John Smith', 'jsmith', 'fluffy', 0),
-('Leonardo Dicaprio', 'leodicap', 'nooscar', 1),
+('Leonardo Dicaprio', 'leodicap', 'nooscar', 0),
 ('Liz Lemon', 'llbean', 'blergh', 0),
-('Myles Anderson', 'mca12', 'bob', 0),
+('Myles Anderson', 'mca12', 'bob', 1),
 ('Karlie Kloss', 'model', 'fashion', 0),
 ('Michelle Rojas', 'mr11j', 'password', 0),
 ('Mary Smith', 'msmith', 'abby', 0),
