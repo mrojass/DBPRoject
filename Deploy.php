@@ -49,9 +49,9 @@
 		<label>Deploy To AgencyID:</label><input type="text" name="TAid" value=""></input><br>
 		<label>Deploy From AgencyID:</label><input type="text" name="FAid" value=""></input><br>
 		<label>EquipmentID:</label><input type="text" name="Eid"></input><br>
-		<input type="submit" name="send" value="Send Request"></input><br><br>
-		<input type="submit" name="approve" value="Approve"></input>
-		<input type="submit" name="pending" value="Pending"></input>
+		<input class="button" type="submit" name="send" value="Send Request"></input><br><br>
+		<input class="button" type="submit" name="approve" value="Approve"></input>
+		<input class="button" type="submit" name="pending" value="Pending"></input>
 		</form><br>
 		<form method="post">
 			<input type="submit" name="admin" value="Go To Admin Page"></input>
