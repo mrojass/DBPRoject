@@ -41,7 +41,8 @@
 }
 
 #deploybox {
-text-align:center;
+    padding: 10px;
+    text-align:left;
         position:absolute;
         top: 50%;
         border:3px solid black;
@@ -53,6 +54,27 @@ text-align:center;
     margin-left: -15em;
         background-image:url("background3.jpg");
 
+}
+#deploybox h2 {
+    font-family: Georgia;
+    text-shadow:1px 1px 0 #002657,
+                -1px -1px 0 #002657,
+                1px -1px 0 #002657,
+                -1px 1px 0 #002657,
+                0px 1px 0 #002657,
+                1px 0px 0 #002657,
+                0px -1px 0 #002657,
+                -1px 0px 0 #002657,
+                4px 4px 3px #000;
+    color: #F1112A;
+    height: 25px;
+}
+
+#deploybox label {
+    padding-right: 50px;
+}
+#deploybox .button {
+    margin-top: 15px;
 }
 
 #approve {
