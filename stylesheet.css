@@ -13,18 +13,24 @@
 }
 
 #searchbox {
-	text-align:center;
+	padding: 10px;
+text-align:left;
 	position:absolute;
 	top: 50%;
 	border:3px solid black;
 	border-radius:25px;
     left: 50%;
     width:500px;
-    height:250px;
+    height:350px;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em;
 	background-image:url("background3.jpg");
 }
+
+#searchbox label {
+    padding-right: 50px;
+}
+
 
 #advsearchbox {
 	text-align:center;
@@ -49,7 +55,7 @@
         border-radius:25px;
     left: 50%;
     width:500px;
-    height:270px;
+    height:290px;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em;
         background-image:url("background3.jpg");
@@ -98,4 +104,15 @@ height:250px;
     width: 100%;
     height: 30px;
     background-image:url("background3.jpg");
+}
+
+#results h4 {
+ font-family: helvetica;
+ color: white;
+ text-align: left;
+}
+
+#results td {
+ color: #999966;
+ text-align: center;
 }

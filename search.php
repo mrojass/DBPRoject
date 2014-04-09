@@ -19,20 +19,7 @@
                         else    header("location:search.php");
 	}	
 	
-	/*if(isset($_POST['name']))
-	{
-		$name=$_POST['name'];
-		$email=$_POST['email'];
-		$userid=$_POST['userid'];
-		$password=$_POST['password'];
-		
-		$result=mysqli_query($con,"insert into stu_info values('','$name','$email','$userid','$password')");
-		if($result)
-		{
-		echo 'Values updated successfully';
-		}
 
-	}*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,15 +31,31 @@
 		<img align="left" width="150" src="SERTlogo.png"></img>
 		<img align="right" width="150" src="SERTlogo.png"></img>
 		<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
+		
 		<div id="searchbox"><h2>Search</h2>
-		<form action="search.php" method="get">
-		<input type="text" name="search" value="Search Here">
-		<input type="submit" name="search" value="Search"><br>
-		<a href="advsearch.php">Advanced Search</a><br><br>
+		
+		<form action="results.php" method="get">
+			<label>Equipment ID: </label><input style="margin-left:26px" type="text" name="equipid"><br>
+			<label>Agency ID: </label> <input style="margin-left:55px" type="text" name="agenid"><br>
+			<label>Equipment Name: </label><input type="text" name="equipname"><br>
+			<label>Section: </label><input style="margin-left:79px"  type="text" name="section"><br>
+			<label>Category: </label><input style="margin-left:66px"  type="text" name="category"><br>
+			<label>SubCategory: </label><input style="margin-left:38px" type="text" name="subcategory"><br>
+			<label>AEL Code: </label><input style="margin-left:63px" type="text" name="aelcode"><br>
+			<table style="text-align:right; border-spacing:5px; width:400px">
+                        <tr>
+                                <td><label>Deployable:</label>
+                                <input type="checkbox" name="deployable"></td>
+                                <td><label>Status:</label>
+                                <input type="checkbox" name="status"></td>
+                        </tr>
+                        <table>
+			<input type="submit" name="search" value="Search"><br><br>
 		</form>
+		
 		<form method="post">
-		<input type="submit" name="return" value="Return To Adim Page">
-		<input type="submit" name="logout" value="Logout">
+			<input type="submit" name="return" value="Return To Adim Page">
+			<input type="submit" name="logout" value="Logout">
 		</form>
 		</div>
 	</body>
