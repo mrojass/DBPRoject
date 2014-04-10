@@ -19,7 +19,7 @@
                         else    header("location:search.php");
 	}	
 
-	$search = $_POST["description"];
+	$search = $_POST["equipid"];
 
 	$query = "SELECT * FROM Equipment WHERE description LIKE '%$search%'";
 	if (!$query)
