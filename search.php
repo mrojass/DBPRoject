@@ -18,7 +18,14 @@
                                 header("location:AdminPage.php");
                         else    header("location:search.php");
 	}	
-	
+
+	$search = $_POST["description"];
+
+	$query = "SELECT * FROM Equipment WHERE description LIKE '%$search%'";
+	if (!$query)
+	{
+		echo 'Your search returned no results';
+	}
 
 ?>
 <!DOCTYPE html>
