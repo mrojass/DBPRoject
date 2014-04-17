@@ -1,7 +1,7 @@
 <!-- Maps page-->
 <?php
   session_start();
-  if(!isset($_SESSION['username']) || !isset($_SESSION['admin']) )
+  if(!isset($_SESSION['username']))
   {
     session_destroy();
     header("location:index.php");
