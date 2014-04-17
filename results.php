@@ -34,20 +34,25 @@
 
 		if(isset($_GET['deployable']) && !isset($_GET['status'])){
                          $deploy=0;
-                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' AND Name='$equipname' AND Section='$section' AND     Category    ='$category' AND SubCategory='$subcategory' AND AELCode='$aelcode' AND Deploy='$deploy'");
+                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR     Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode' AND Deploy='$deploy'");
                  }
                  else if(isset($_GET['status']) && !isset($_GET['deployable'])){
                          $status=1;
-                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' AND Name='$equipname' AND Section='$section' AND     Category    ='$category' AND SubCategory='$subcategory' AND AELCode='$aelcode' AND Status='$status'");
+                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR     Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode' AND Status='$status'");
                  }
                  else if(isset($_GET['status']) && isset($_GET['deployable'])){
                          $deploy=0;
                          $status=1;
-                 	$result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' AND Name='$equipname' AND Section='$section' AND Category    ='$category' AND SubCategory='$subcategory' AND AELCode='$aelcode' AND Deploy='$deploy' AND Status='$status'");
+                 	$result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode' AND Deploy='$deploy' AND Status='$status'");
                  }
                  else {
                  	$result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR Category        ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode'");
 		}
+
+	if(isset($_GET['direc'])){
+		$id=$_GET['id'];
+		header("location:maps.php?id=$id");
+	}
 
 ?>
 
@@ -87,7 +92,12 @@
 				<td><h4>Count: </h4><?php echo $row['Count'];?></td>
 				<td><h4>Agency ID: </h4><?php echo $row['Aid'];?></td>
 				<td><h4>Equipment ID: </h4><?php echo $row['Eid'];?></td>
-			
+				<td>
+					<form action="results.php" method="get">
+						<input type="submit" name="direc" value="Location">
+						<input type="hidden" name="id" value="<?php echo $row['Aid']; ?>">
+					</form>
+				</td>
 			</tr>
 		
 		<?php $count+=1;
