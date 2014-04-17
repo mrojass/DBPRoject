@@ -9,15 +9,11 @@
                 header("location:logout.php");
 
         include 'database_connector.php';
-/*        if(isset($_POST['return']))
+        if(isset($_POST['return']))
         {
-                $username=$_SESSION['username'];
-                $admin =mysqli_query($con, "select * from Employees where username='$username' and admin='1'");
-                        if($admin->num_rows==1)
-                                header("location:AdminPage.php");
-                        else    header("location:search.php");
+             header("location:search.php");
         }
-*/
+
 
 	if(isset($_GET['search']))
         {
@@ -34,16 +30,16 @@
 
 		if(isset($_GET['deployable']) && !isset($_GET['status'])){
                          $deploy=0;
-                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR     Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode' AND Deploy='$deploy'");
+                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE (Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR     Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode') AND Deploy='$deploy'");
                  }
                  else if(isset($_GET['status']) && !isset($_GET['deployable'])){
                          $status=1;
-                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR     Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode' AND Status='$status'");
+                         $result=mysqli_query($con, "SELECT * FROM Equipment WHERE (Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR     Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode') AND Status='$status'");
                  }
                  else if(isset($_GET['status']) && isset($_GET['deployable'])){
                          $deploy=0;
                          $status=1;
-                 	$result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode' AND Deploy='$deploy' AND Status='$status'");
+                 	$result=mysqli_query($con, "SELECT * FROM Equipment WHERE (Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR Category    ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode') AND Deploy='$deploy' AND Status='$status'");
                  }
                  else {
                  	$result=mysqli_query($con, "SELECT * FROM Equipment WHERE Aid='$agenid' OR Eid='$equipid' OR Name='$equipname' OR Section='$section' OR Category        ='$category' OR SubCategory='$subcategory' OR AELCode='$aelcode'");
@@ -66,6 +62,10 @@
                 <img align="left" width="150" src="SERTlogo.png"></img>
                 <img align="right" width="150" src="SERTlogo.png"></img>
                 <h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
+<br><br>
+<form action="results.php" method="post">
+	<input type="submit" name="return" value="Return">
+</form>
 <br><br>
 <table id="results" border="1"><?php
 		$count=1;
