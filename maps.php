@@ -6,7 +6,15 @@
     session_destroy();
     header("location:index.php");
   }
-
+	include 'database_connector.php';
+	
+	if(isset($_GET['id'])){
+		$id=$_GET['id'];
+		$result=mysqli_query($con, "SELECT * FROM Agencies WHERE Aid='$id'");
+		$row=mysqli_fetch_array($result);
+		$lon=$row['longitude'];
+		$lat=$row['latitude'];
+	}
 
   ?>
 <!DOCTYPE html>
@@ -39,14 +47,14 @@
   <body background="background2.jpg">
 		<img align="left" width="150" src="SERTlogo.png"></img>
 		<img align="right" width="150" src="SERTlogo.png"></img>
-		<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
-    <div id="loginbox">
+	<h1 align="middle" style="padding-top:30px; color:white">Florida State CBRNE Specialized Equipment Database</h1>
+   <!--<div id="loginbox">
     <h2>Search Map For Deployment:</h2><br/>
     <form name="searchmap" action="maps.php" method="post">
       <input type="text" name="search" />
       <input type="button" name="submit" value="Search" />
     </form>
-  </div>
+  </div>-->
     <div id="map-canvas"/>
     <div id="bottombar"> </div>
   </body>

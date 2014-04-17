@@ -12,6 +12,22 @@
 	background-image:url("background3.jpg");
 }
 
+#makebox {
+        padding: 10px;
+text-align:left;
+        position:absolute;
+        top: 50%;
+        border:3px solid black;
+        border-radius:25px;
+    left: 50%;
+    width:500px;
+    height:350px;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em;
+        background-image:url("background3.jpg");
+}
+
+
 #searchbox {
 	padding: 10px;
 text-align:left;
@@ -21,7 +37,7 @@ text-align:left;
 	border-radius:25px;
     left: 50%;
     width:500px;
-    height:350px;
+    height:400px;
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em;
 	background-image:url("background3.jpg");

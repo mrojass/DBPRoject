@@ -35,7 +35,7 @@
 			<form method="post">
 				<input type="submit" name="deploy" value="Deploy"><br><br>
 				<input type="submit" name="search" value="Search"><br><br>
-				<input type="submit" name="change" value="Make Changes"><br><br>
+				<input type="submit" name="change" value="Change Status/Return Equipment"><br><br>
 				<input type="submit" name="logout" value="Logout">
 			</form>
 		</div>
