@@ -77,7 +77,7 @@ text-align:left;
         background-image:url("background3.jpg");
 
 }
-#deploybox h2 {
+/*#deploybox h2 {
     font-family: Georgia;
     text-shadow:1px 1px 0 #002657,
                 -1px -1px 0 #002657,
@@ -90,7 +90,7 @@ text-align:left;
                 4px 4px 3px #000;
     color: #F1112A;
     height: 25px;
-}
+}*/
 
 #deploybox label {
     padding-right: 50px;
